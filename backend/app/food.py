@@ -176,7 +176,7 @@ class Food:
     def vacation_five(cls,City,Rating,Price_range):
          with sqlite3.connect(cls.dbpath) as conn:
                 cursor = conn.cursor()
-                sql = """SELECT * FROM food WHERE City=? AND Rating =5 AND Price_range ="$" LIMIT 10"""
+                sql = """SELECT * FROM food WHERE City=? AND Rating >4 AND Price_range ="$" LIMIT 10"""
                 cursor.execute(sql, (City,))
                 results = cursor.fetchall()
                 return results
