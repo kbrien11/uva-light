@@ -23,7 +23,8 @@ def schema(dbpath):
              Number_of_reviews INTEGER,
              Reviews TEXT,
              menu TEXT,
-             menu_link TEXT
+             menu_link TEXT,
+             address TEXT
             );"""
 
         cursor.execute(SQL)

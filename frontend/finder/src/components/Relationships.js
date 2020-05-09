@@ -31,7 +31,7 @@ return (
  <Text marginTop={2} backgroundColor ='#f5f5f5'> {props.data[0]}</Text>
 {/* <Text backgroundColor ='lightgrey'> {props.data[1]}</Text> */}
    <div class = 'pendingbutton'>
-     <button type = 'button' onClick={e => acceptfriend()}  marginTop={2} textAlign='center' justifyContent='center' backgroundColor='lightgrey' color="purple" mx={2}  width = {1/5}>  <FaCheckSquare/></button>
+     <button type = 'button' onClick={e => acceptfriend()}  marginTop={2} textAlign='center' justifyContent='center' backgroundColor='lightgrey' color="purple" mx={2}  width = {1/5}>  <FaCheckSquare /></button>
      </div>
      </Flex>
      

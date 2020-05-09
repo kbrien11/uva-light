@@ -1,14 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import User from './User';
 import {Box,Text,Flex,Heading,Button,Card} from 'rebass';
-import {Input } from '@rebass/forms'
 import OtherNavBar from './LoggedInNavBar';
 import CityReview from './ReviewCity';
-import Images from './userPicture';
 import FirstReview from './ReviewFirstName';
-import {FaAngleDown,FaAngleDoubleRight} from 'react-icons/fa'
 import moment from 'moment';
-// import Moment from 'react-moment';
+import Icon from '@material-ui/core/Icon';
+import SaveIcon from '@material-ui/icons/Save';
 
 
 
@@ -198,28 +196,48 @@ const addfriend = async(props) =>{
   }
 
   let now = moment().format("MM/DD/YYYY HH:mm:ss")
-  // let now = new Date();
-  // //  <Moment format='YYYY/MM/DD h:mm:ss '> {now} </Moment>
-  // // setTime(now)
-  //  let date = Moment(now).format('MMMM Do YYYY, h:mm:ss a')
-  //  console.log(date)
+
+  
+  
 return (
 <Box
 >
     <OtherNavBar/>
     <Heading color='#888' textAlign="center" justifyContent="center" marginTop={4}> Please search for a user below</Heading>
   
-    {isError && <Text marginTop={3} color='red' textAlign="center" justifyContent='center'> This User does not exist in the database</Text>} 
-    
+    {isError && <Text marginTop={3} color='red' textAlign="center" justifyContent='center'> This User/Email does not exist or has no reviews to see!</Text>} 
+   
     <div className='userinput'>
-    <input  placeholder = "Email" onChange = {e => setInputEmail(e.target.value)}></input> <br/>
+    <input textAlign='center'  placeholder = "Email..." onChange = {e => setInputEmail(e.target.value)}></input> <br/>
    </div>
-    <Flex>
+    <Flex
+    sx = {{
+      textAlign:'center',
+      justifyContent:'center'
+    }}
+    >
+    <div class = 'outterDiv'>
      <div class = "addfriend"> 
       <button  onClick = {e =>getProfile()}> Profile</button>  
+  
        {firstname}
-       </div> 
+       
+{/*       
+       <div class = 'userButton'>
+       {firstname.length >0 &&<button class = 'userActionButton' onClick = {e =>addfriend()}> Connect</button>}
+      {firstname.length >0 && <button class = 'userActionButton'  onClick = {e =>getUser()}>More Info</button>}
      
+      </div> */}
+      
+       </div> 
+       
+       {firstname.length >0 &&<button class = 'userActionButton' onClick = {e =>addfriend()}> Connect</button>}
+       {firstname.length >0 && <button class = 'userActionButton'  onClick = {e =>getUser()}>More Info</button>}
+     
+      
+     </div>
+     
+     {/* <div class = 'outterDiv'>
       {firstname.length > 0 &&<div class = "dropdowns">
      {firstname.length > 0 && <p class = "drops"> More     <FaAngleDown/>  </p>}
       <i class="fa fa-caret-down"></i>
@@ -228,17 +246,20 @@ return (
       {firstname.length >0 && <button  onClick = {e =>getUser()}>More Info</button>}
      
 </div> }
-</div> }
+</div>
+ } */}
+ 
 <div class = 'messwrapper'>
 <div class = 'messcard'>
  {firstname.length >0 && <div class="form-container">
   <h1>Chat</h1>
   <label for="msg"><b>Message</b></label>
     <textarea  onChange={e => setMessage(e.target.value)} placeholder="Type message.." name="msg" required></textarea>
-    {firstname.length >0 && <button class='btn' onClick = {e =>sendMessage()}> Send</button>}
+    {firstname.length >0 && <button class='btn' onClick = {e =>sendMessage()} endIcon={<Icon>send</Icon>}> Send</button>}
 </div> }
 </div>
 </div>
+
 </Flex>
 
 

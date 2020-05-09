@@ -1,6 +1,6 @@
 import csv
 import sqlite3
-from utils import get_link
+from utils import get_link,get_address
 
 
 
@@ -19,16 +19,17 @@ def dump_employees(filepath):
             Reviews = line[8]
             menu =line[9]
             menu_link = line[9]
-            add_value(Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,get_link(menu_link))
+            address = line[9]
+            add_value(Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,get_link(menu_link),get_address(address))
  
-def add_value(Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link):
+def add_value(Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link,address):
     with sqlite3.connect("uva.db") as conn:
         cursor = conn.cursor()
 
-        SQL = """ INSERT INTO food (Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link)
-            VALUES (?,?,?,?,?,?,?,?,?,?)"""
+        SQL = """ INSERT INTO food (Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link,address)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?)"""
 
-        cursor.execute(SQL, (Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link))
+        cursor.execute(SQL, (Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link,address))
 
 
 if __name__=="__main__":

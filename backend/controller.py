@@ -284,6 +284,14 @@ def filter_price_asian(city,cuisine,num=5):
         return jsonify ({"restaurant": rests})
     return jsonify({"No restaurant here,":rests})
 
+@app.route ('/vegeterian/<city>/<cuisine>/<num>', methods =['GET'])
+def filter_price_vegeterian(city,cuisine,num=5):
+    user = Food.price_authenticate(city)
+    rests = user.price_filter_veg(user.City,cuisine,int(num) + 5)
+    if rests:
+        return jsonify ({"restaurant": rests})
+    return jsonify({"No restaurant here,":rests})
+
 
 @app.route ('/asian/<city>/<cuisine>/<num>', methods =['GET'])
 def filter_price_italian(city,cuisine, num =5):
@@ -291,7 +299,7 @@ def filter_price_italian(city,cuisine, num =5):
     rests = user.price_filter_asian(user.City,cuisine, int(num) + 5)
     if rests:
         return jsonify ({"restaurant": rests})
-    return jsonify({"No restaurant here,":rests})
+    return jsonify({"No restaurant here,":"No Asian Restaurants in this city"})
 
 @app.route('/api/suggest/<city>/<rating>/<price_range>', methods=['GET'])
 def suggest(city,rating,price_range):

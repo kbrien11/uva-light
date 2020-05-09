@@ -52,22 +52,33 @@ const OtherNavBar =() => {
   })
 
 return (
-    <div class="nav_wrapper">
-<div class='firstnav'>
-<Flex 
+  <div class="topnav">
+   {/* <div class="nav_wrapper">
+<div class='firstnav'> */}
+{/* <Flex 
 bg ='lightskyblue'
-> 
+>  */}
 
-   <h2 backgroundColor='lightskyblue' fontSize={6} fontWeight='bold'   > Uva</h2>
-    <a link sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'   p={1}  href= '/home'as ={RouterLink}> Home  </a>
-    <a link sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'   p={1}  href= '/user' as ={RouterLink}>  Users </a>
-    <a  sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'   p={1}  href= '/view profile'as ={RouterLink}> Profile </a>
-    <a sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'   p={1} href= '/about'as ={RouterLink}> About </a>
-   <a sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'   p={1}  href= '/cities'as ={RouterLink}> Cities </a>
-   <div class = 'logoutnavbar'>
-   <a sx= {{':hover': { backgroundColor:"grey"}}}  backgroundColor='purple' color='white' fontWeight='bold'   p={2} textAlin='right'  href= '/'as ={RouterLink}> Logout </a>
+<h2 backgroundColor='lightskyblue' fontSize={6} fontWeight='bold'   > Uva</h2>
+
+<a link  href= '/home'as ={RouterLink}> Home  </a>
+ <a link sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'     href= '/user' as ={RouterLink}>  Users </a>
+ <a  sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'     href= '/view profile'as ={RouterLink}> Profile </a>
+ <a sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'    href= '/about'as ={RouterLink}> About </a>
+<a sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'     href= '/cities'as ={RouterLink}> Cities </a>
+
+<p>{image && output}</p>
+    
+   
+<div class="topnav-right">
+  <Flex>
+  
+<h4>Inbox {notif.length}</h4>
+   <a  href= '/'as ={RouterLink}> Logout </a>
+   </Flex>
    </div>
-   <div class = 'inboxcard'>
+   
+   {/* <div class = 'inboxcard'>
   <Flex 
   bg="lightskyblue"
   >
@@ -77,10 +88,11 @@ bg ='lightskyblue'
  </div> 
  <div class = 'navimg'>
    {image && output}
-   </div>
-</Flex>
+   </div> */}
+{/* </Flex> */}
+<hr></hr>
 </div>
-</div>
+// </div>
 )
 }
 export default OtherNavBar;

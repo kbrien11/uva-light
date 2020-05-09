@@ -14,30 +14,30 @@ return (
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Athens (GR) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Barcelona (ES) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Berlin (DE) </Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Bratislava (SK) </Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Budapest (HU)</Text>
+
+
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Copenhagen (DK) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Dublin (IE) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Edinburgh (UK) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Helsinki (FI)</Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Hamburg (DE) </Text>
+
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Krakow (PL), </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Lisbon (PT) </Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}>  Ljubljana (SI) </Text>
+
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> London (UK)</Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Luxembourg (LU)</Text>
+
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Madrid (ES) </Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Lyon (FR) </Text>
+
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Milan (IT)</Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Munich (DE)</Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Oporto (PT)</Text>
+
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Oslo (NO)</Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Paris (FR) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Prague (CZ)</Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Rome (IT)</Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Stockholm (SE)</Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Vienna (AT) </Text>
-<Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Warsaw (PL) </Text>
+
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Zurich (CH) </Text>
 
 </Box>

@@ -9,6 +9,7 @@ const FirstReview = (props) => {
         <div>
             <Flex>
                 {/* <div class ='container'> */}
+                
               <div class = "card">  
             {/* <Card marginTop={2} backgroundColor = 'white' textAlign='center' width={[ 350, 520 ]} mx='auto'> */}
             <img src = {props.data[2]}></img>

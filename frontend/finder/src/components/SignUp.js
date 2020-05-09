@@ -1,12 +1,9 @@
 import React,{useState, useEffect} from 'react';
-import { Label, Checkbox,Input } from '@rebass/forms'
 import {Flex, Box, Link,Text,Button,Image} from 'rebass'; 
 import {Link as RouterLink} from 'react-router-dom';
-import NavBars from './Navbars'
-import FileUpload from './FileUpload';
-import Uploader from './uploader';
 import { storage } from "./firebaseConfig";
-import SignIn from './SignIn';
+
+
 
 
 
@@ -115,6 +112,8 @@ const [error, setError] = useState("");
       }
   
     };
+
+   
      
       
 return (
@@ -126,9 +125,9 @@ return (
  
  <card>
    <div class ='signupimg'>
- <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSb8BEHcb1ucSqGNDns6vy_c9n32PJBFDkSsGalx5BdL7rVtIFL"
+ <p>Uva</p>
   
-    />
+    
     </div>
     <div class = 'Signup'>
       <div class = "signuph2">

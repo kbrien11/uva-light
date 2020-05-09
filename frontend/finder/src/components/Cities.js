@@ -38,7 +38,7 @@ let result = (props.data[3]).replace(/("|')/g, "")
 let results = (props.data[8]).replace(/("|')/g, "")
 
 
-  const output = <FaStar/>
+  const output = <FaStar backgroundColor='white'/>
   const stars = []
   for (let i =0; i < (props.data[5]); i += 1) {
      stars.push(output)
@@ -46,76 +46,78 @@ let results = (props.data[8]).replace(/("|')/g, "")
 
  return (
   
-   <Box sx ={{justifyContent:'center',
-       textAlign:'center'}}> 
+   <div class = 'citycard'> 
     
    <Flex
    textAlign='center'
    >
      <div class = 'cityimage'>
-      
-       <img src = {props.data[10]} onError ></img>
-    
-      
+      <object data =  {props.data[10]}  >
+      <img src = "https://img.traveltriangle.com/blog/wp-content/uploads/2018/08/N64f007h-Rima-Italian-Restaurant.jpg"></img>
+      </object>
+       
 </div>
-    <Card marginTop={2} marginLeft={3} justifyContent='left' width={850} textAlign='Center' backgroundColor="white" color='blue' p={2} marginBottom={2}>
+    <Card height={220} marginTop={2} marginLeft={3} justifyContent='left' width={850} backgroundColor='#f5f5f5' textAlign='Center' p={2} color='blue' >
+    <div class = 'address'>
+    <p >{props.data[11]}</p>
+    </div>
+   <Flex
+   marginTop={2}
+    mx = {4}
+    
+    justifyContent = 'center'
+    alignItems='center'
+    color="black">
+      <h2 marginTop={2} textAlign='center'  mx={1} fontWeight='bolder'  color="black" >{props.data[4]}.</h2>
+      <h2 marginTop={2} fontFamily='Corben, Georgia, Times, serif;'  mx={1} color="black"> {props.data[1]}</h2> 
+   
+   </Flex>
   
    <Flex
-   marginTop={2}
+  
     mx = {4}
-    backgroundColor='white'
+    backgroundColor='#f5f5f5'
     justifyContent = 'center'
     alignItems='center'
     color="black">
-      <Heading backgroundColor='white'  mx={1} fontWeight='bolder' justifyContent='center' color="black" textAlign ="center">{props.data[4]}.</Heading>
-      <Heading fontFamily='Corben, Georgia, Times, serif;' backgroundColor='white' mx={1} color="black"> {props.data[1]}</Heading> 
-      
-   </Flex>
-   <Flex
-   marginTop={2}
-    mx = {4}
-    backgroundColor='white'
-    justifyContent = 'center'
-    alignItems='center'
-    color="black">
-   <Text backgroundColor='white' mx={1} justifyContent='center'  color="black" textAlign ="center"> {props.data[6]}</Text>
- <Text backgroundColor='white' color='gold'  mx={1}> {stars}</Text>
-
+   <Text  mx={1} justifyContent='center'  color="black" textAlign ="center"> {props.data[6]}</Text>
+ <Text  color='gold'  mx={1}> {stars}</Text>
+ <Text  color='black'>({props.data[5]})</Text>
    </Flex>
 
    <Flex
    marginTop={1}
     mx = {4}
-    backgroundColor='white'
+    marginBottom={1}
     justifyContent = 'center'
     alignItems='center'
     color="black">
-      <Text backgroundColor='white'mx={1} color="black"  color="black">{props.data[7]} Reviews</Text>
+      <Text mx={1} color="black"  color="black">{props.data[7]} Reviews</Text>
       <div class = 'menulink'>
-      <a fontWeight='bold' color='lightskyblue' backgroundColor='white'  href = {props.data[11]} target ='_blank'> Menu </a>
+      <a fontWeight='bold' color='lightskyblue' backgroundColor='#f5f5f5'  href = {props.data[9]} target ='_blank'> Menu </a>
       </div>
     </Flex>
-
+  
    <hr></hr>
 
    <Flex
    marginTop={1}
     mx = {4}
-    backgroundColor='white'
+    
     justifyContent = 'center'
     alignItems='center'
     color="black">
-   {<Text backgroundColor='white' marginTop={2} color="black"> {result}</Text>}
+   {<Text  marginTop={2} color="black"> {result}</Text>}
    </Flex>
-   <Text backgroundColor='white' marginLeft={4} marginTop={2} color="black"> {results}</Text>
+   <Text marginBottom={1}  textAlign='center' justifyContent='center'  marginTop={2} color="black"> {results}</Text>
   
    <hr></hr>
     
    {[...Array(5)].map((star,i) => {
- const ratingValue = i + 1/2
+ const ratingValue = i + 1
 
  return (
-  
+     
       <label>
      <input class='starInput'
       type = 'radio' 
@@ -123,7 +125,7 @@ let results = (props.data[8]).replace(/("|')/g, "")
       value ={ratingValue} 
       onClick ={e =>setRating(ratingValue)}
       />
-     <FaStar backgroundColor='white' 
+     <FaStar 
      class="star" 
      color ={ratingValue <=( hover || rating) ? 'gold': 'grey'} size ={40}
      onMouseEnter ={() => setHover(ratingValue)}
@@ -132,11 +134,11 @@ let results = (props.data[8]).replace(/("|')/g, "")
 )
 })}
  <br/>
-   <Button marginTop={2} width={1/4} backgroundColor = "lightskyblue" color = 'white' marginTop={2} onClick = {e => addRating()} > Add rating </Button>
+   <Button textAlign='center' justifyContent='left' marginTop={2} width={1/4} backgroundColor = "lightskyblue" color = 'white' marginBottom={3} onClick = {e => addRating()} > Add rating </Button>
   
    </Card>
    </Flex>  
-   </Box>
+   </div>
 ) ;
 };
 
@@ -147,4 +149,4 @@ export default City;
 
 
 
-<img alt="Food - Wikipedia" class="n3VNCb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 585px; height: 390px; margin: 0px;"></img>
+

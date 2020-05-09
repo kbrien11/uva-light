@@ -1,16 +1,7 @@
 import React,{useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import {NavLink} from 'react-router-dom'
-import {Text,Box,Image,Card,Heading,Button,Flex} from 'rebass';
-import { Label, Checkbox,Input } from '@rebass/forms'
 import Example from './Example' ;
-import Signup from './SignUp'
-import OtherNavBar from './LoggedInNavBar';
-import NavBar from './Navbar'
-import Output from './output';
 import {FaKey,FaFolder} from 'react-icons/fa'
-
-
 
 
 const SignIn =() => {
@@ -40,13 +31,17 @@ const signin = async() =>{
      console.log(res.token)
      sessionStorage.setItem("token", res.token)
      setToken(res.token)
+     setInputEmail("")
      setIsError(true)
      if (res.token) {
      history.push ('/home')
+     setInputEmail("")
    } 
 }
   
     
+
+
 return (
 
   <div class = 'signinwrapper'>
@@ -61,9 +56,10 @@ return (
          <card>
      {/* <div class = "container">
         <div class='flex-item'>  */}
-        <div class ='signinimg'>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSb8BEHcb1ucSqGNDns6vy_c9n32PJBFDkSsGalx5BdL7rVtIFL"
-    />
+      <div class ='signupimg'>
+ <p>Uva</p>
+  
+    
     </div>
       <div class = 'Signup'>
       <div class = "signuph2">

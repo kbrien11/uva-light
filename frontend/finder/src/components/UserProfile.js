@@ -33,7 +33,8 @@ return(
 <Card marginTop={4} p={2} height={400} width={400} backgroundColor="#f5f5f5">
 <Button  onClick ={e => seeFriends()} backgroundColor='#f5f5f5' color="black"  marginTop={3} width = {1/2}> Pending</Button>
 <hr color ='black'></hr>
-     {output.length >0 && <Text fontWeight='bold' marginTop={4} backgroundColor='#f5f5f5'>  {output.length} request(s)</Text> }
+     {output.length >0 && <Text fontFamily= 'Lucida Sans Unicode'
+       fontWeight='bold' marginTop={4} backgroundColor='#f5f5f5'>  {output.length} Request(s)</Text> }
      <div class = "pendingoutput">
      {output.length >0 && <p marginTop={1} backgroundColor='#f5f5f5'>{output}</p>}
      </div>
