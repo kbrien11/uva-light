@@ -2,7 +2,6 @@
   "name": "finder",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://kbrien11.github.io/Uva_Backend/",
   "dependencies": {
     "chart.js": "^2.9.3",
     "firebase": "^7.14.3",
@@ -21,13 +20,15 @@
     "react-star-rating": "^1.4.2",
     "react-time": "^4.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy":"yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   }
 }
