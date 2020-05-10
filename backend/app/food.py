@@ -6,7 +6,7 @@ from .util import get_links
 class Food:
     dbpath = "data/uva.db"
 
-    def __init__(self,pk,Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link):
+    def __init__(self,pk,Name,City,Cuisine_style,Ranking,Rating,Price_range,Number_of_reviews,Reviews,menu,menu_link,address):
         self.Name = Name
         self.City = City
         self.Ranking = Ranking
@@ -17,6 +17,7 @@ class Food:
         self.pk = pk
         self.menu = menu
         self.menu_link = menu_link
+        self.address = address
         
 
 
@@ -125,6 +126,14 @@ class Food:
                 results = cursor.fetchall()
                 return results
 
+    def price_filter_veg(cls,City, Cuisine_style,num):
+            with sqlite3.connect(cls.dbpath) as conn:
+                cursor = conn.cursor()
+                sql = """SELECT * FROM food WHERE City=? AND Cuisine_style LIKE "%'Vegetarian Friendly'%" LIMIT 0,{} """.format(num)
+                cursor.execute(sql, (City,))
+                results = cursor.fetchall()
+                return results
+
 
     @classmethod
     def name_authenticate(cls, Rating):
@@ -134,7 +143,7 @@ class Food:
             cursor.execute(SQL, (Rating,))
             row = cursor.fetchone()
             if row:
-                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10])   
+                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11])   
             return None
 
     @classmethod
@@ -145,7 +154,7 @@ class Food:
             cursor.execute(SQL, (City,))
             row = cursor.fetchone()
             if row:
-                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10])
+                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11])
             return None
 
 
@@ -157,7 +166,7 @@ class Food:
             cursor.execute(SQL, (Name,City))
             row = cursor.fetchone()
             if row:
-                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10])           
+                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11])           
             return None   
 
     @classmethod
@@ -168,7 +177,7 @@ class Food:
             cursor.execute(SQL,)
             row = cursor.fetchone()
             if row:
-                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10])
+                return cls(row[0], row[1], row[2], row[3], row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11])
             return None
 
 
