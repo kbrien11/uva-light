@@ -118,6 +118,14 @@ def get_accepted_friends (api_key):
         friends = Relationship.get_friends(token.email)
         return jsonify({"friends":friends, "token":token.Api_key})
     return jsonify({"message":"failed"})
+
+@app.route('/getusersacceptedfriends/<api_key>/<email>',methods = ['GET'])
+def get_users_friends (api_key,email):
+    token = User.api_authenticate(api_key)
+    if token:
+        friends = Relationship.get_friends(email)
+        return jsonify({"friends":friends, "token":token.Api_key})
+    return jsonify({"message":"failed"})
 # @app.route('/getUsers/<pk>' , methods = ['GET'])
 # def get_users(pk) :
 #         new_user = Relationship.user_one_authenticate(pk)
