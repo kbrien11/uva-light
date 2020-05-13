@@ -2,8 +2,8 @@ import React,{useState, useEffect} from 'react';
 import {Flex, Box, Link,Text,Button,Image} from 'rebass'; 
 import {Link as RouterLink} from 'react-router-dom';
 import { storage } from "./firebaseConfig";
-
-
+import {FaWineBottle} from 'react-icons/fa'
+import { FaFileUpload } from "react-icons/fa";
 
 
 
@@ -126,7 +126,7 @@ return (
  <card>
    <div class ='signupimg'>
  <p>Uva</p>
-  
+ <FaWineBottle class = 'bottle'/>
     
     </div>
     <div class = 'Signup'>
@@ -161,19 +161,23 @@ return (
           p={2}
           bg= "white"
           > */}
+           
           <div className = "signupinput">
+          {/* <FaFileUpload class = 'file'/> */}
+      
         <input  type="file" onChange={handChange} /> 
+       
         </div>
         {/* </Flex> */}
         <div>
 
         {progress > 0 ? <progress value={progress} max="100" /> : ""}
 
-        <p style={{ color: "red" }}>{error}</p>
+        <p >{error}</p>
 
       </div>
          
-        {register && <Text backgroundColor="white" marginLeft={5} color = "green"> Thank you for creating an account!
+        {register && <Text marginTop={2} backgroundColor="white" marginLeft={5} color = "green"> Thank you for creating an account!
          Please log in </Text>}
          <div class ='loginbutton'>
         <button onClick = {e=>sendData()}>  Sign Up</button>

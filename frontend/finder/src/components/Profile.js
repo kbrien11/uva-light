@@ -13,20 +13,24 @@ import MessageTwo from './messagetwo'
 const Profile = () =>{
     const [data,setData] = useState([])
     const [datas,setDatas] = useState([])
-    // const [pop,setPop] = useState([])
+   const[messageError,setMessageError] = useState(false)
+   const[error,setError] = useState(false)
    const [token, setToken] = useState(sessionStorage.getItem('token') || "")
-  //  const[mess,seeMess] = useState(false)
-
-  //  useEffect(() => {notifications()},(mess))
-   
+  
 
 
     const seeFriends = async () => {
         try{
         const response = await fetch(`http://127.0.0.1:5000/getacceptedfriends/${token}`);
         const res = await response.json();
-        setData(res.friends);
-        setToken(res.token)
+        if(res.friends.length>0){
+          setToken(res.token)
+          setData(res.friends)
+          setError(false)
+        }
+        else{
+          setError(true)
+        }
       } catch(error) {
         console.log(error)
       
@@ -38,8 +42,14 @@ const Profile = () =>{
         try{
         const response = await fetch(`http://127.0.0.1:5000/getmessages/${token}`);
         const res = await response.json();
-        setDatas(res.friends);
+        // setDatas(res.friends);
         setToken(res.token)
+        if (res.friends.length>0){
+          setDatas(res.friends)
+        }
+        else{
+          setMessageError(true)
+        }
        
       } catch(error) {
         console.log(error)
@@ -110,6 +120,7 @@ return (
  </Flex>
  
  {output.length > 0 && <Text mx={2}  color='black' backgroundColor='#f5f5f5'> {output}</Text>} 
+ {error&& <Text fontFamily= 'Lucida Sans Unicode' marginTop={3}> You currently have no friends, go connect!</Text>}
  </div>
  <div class ='columns'>
  < p><Userprofile/></p>
@@ -121,11 +132,12 @@ return (
  <div class = 'columns'>
  <Button  onClick={e => seemessages()} backgroundColor='#f5f5f5' color="black" marginTop={5} width = {1/2}> Messages</Button>
 
-   <hr color ='black'></hr>
+   <hr></hr>
 
  {messages.length > 0 && <Text textAlign='left' marginTop={2} marginBottom={2} fontWeight="bold"> Messages : {messages.length} </Text>}
  {/* <hr></hr> */}
  {messages}
+ {messageError &&<Text fontFamily='Lucida Sans Unicode' marginTop={3} color='black'> You currently do not have any messages</Text>}
 
 
  </div>

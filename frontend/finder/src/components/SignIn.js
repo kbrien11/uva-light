@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import Example from './Example' ;
 import {FaKey,FaFolder} from 'react-icons/fa'
+import {FaWineBottle} from 'react-icons/fa'
 
 
 const SignIn =() => {
@@ -58,7 +59,7 @@ return (
         <div class='flex-item'>  */}
       <div class ='signupimg'>
  <p>Uva</p>
-  
+  <FaWineBottle class = 'bottle'/>
     
     </div>
       <div class = 'Signup'>

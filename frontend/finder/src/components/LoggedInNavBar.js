@@ -53,26 +53,25 @@ const OtherNavBar =() => {
 
 return (
   <div class="topnav">
-   {/* <div class="nav_wrapper">
-<div class='firstnav'> */}
-{/* <Flex 
-bg ='lightskyblue'
->  */}
 
-<h2 backgroundColor='lightskyblue' fontSize={6} fontWeight='bold'   > Uva</h2>
+
+<h2   > Uva</h2>
 
 <a link  href= '/home'as ={RouterLink}> Home  </a>
- <a link sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'     href= '/user' as ={RouterLink}>  Users </a>
- <a  sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'     href= '/view profile'as ={RouterLink}> Profile </a>
- <a sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'    href= '/about'as ={RouterLink}> About </a>
-<a sx= {{':hover': { backgroundColor:"grey"}}} marginTop={3} backgroundColor='purple' color='white' fontWeight='bold'     href= '/cities'as ={RouterLink}> Cities </a>
+ <a link     href= '/user' as ={RouterLink}>  Users </a>
+ <a   href= '/view profile'as ={RouterLink}> Profile </a>
+ <a   href= '/about'as ={RouterLink}> About </a>
+<a     href= '/cities'as ={RouterLink}> Cities </a>
 
-<p>{image && output}</p>
+
     
    
 <div class="topnav-right">
+
+    
   <Flex>
-  
+  <p>{image && output}</p>
+    
 <h4>Inbox {notif.length}</h4>
    <a  href= '/'as ={RouterLink}> Logout </a>
    </Flex>

@@ -20,7 +20,7 @@ return (
          >
     <Text fontWeight="bold" textAlign='center' justifyContent='center' marginTop={3} backgroundColor='#f5f5f5' >  {props.data[1]} </Text>
     <Text textAlign='center' justifyContent='center' marginTop={3} backgroundColor='#f5f5f5' >  ({props.data[0]}) </Text>
-    <Text color = 'purple' marginTop={3}  fontWeight='bold' mx={3} textAlign='left' backgroundColor='#f5f5f5'> {stars}</Text>
+    <Text color = 'lightskyblue' marginTop={3}  fontWeight='bold' mx={3} textAlign='left' backgroundColor='#f5f5f5'> {stars}</Text>
     {/* <Image src = {props.data[5]}></Image> */}
    </Flex>
    </Box>

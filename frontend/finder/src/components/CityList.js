@@ -9,7 +9,7 @@ const CityList = () => {
 return (
     <Box>
         <OtherNavBar/>
-<Heading color='purple' textAlign='center' fontWeight='bold' p={3} marginTop={1}> Here is a list of all the cites that are in the databse</Heading>
+<Heading color='lightskyblue' textAlign='center' fontWeight='bold' p={3} marginTop={1}> List of cites that are currently supported</Heading>
 <Text textAlign='center'  fontWeight='bold' p={3} marginTop={5}> Amsterdam (NL) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Athens (GR) </Text>
 <Text textAlign='center' fontWeight='bold' p={3} marginTop={1}> Barcelona (ES) </Text>

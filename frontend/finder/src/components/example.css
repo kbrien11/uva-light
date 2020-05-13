@@ -114,7 +114,7 @@ body {
     background-color: "#f5f5f5"; 
     font-weight: bold;
      /* border-right: inherit; */
-  
+     margin-top: 13px;
     border-radius: 10px;
     border-style: solid;
     font-size: 150%;
@@ -191,7 +191,7 @@ label{
     box-shadow: 0px 5px 25px #aaa;
    
     margin-top: 30px;
-    margin-left: 30%;
+    /* margin-left: 30%; */
     justify-content: center;
     /* border-style:double;
     border-color: gray; */
@@ -352,7 +352,18 @@ label{
 .pendingoutput p {
     border-right: inherit;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.pendingoutput hr{
+    border-bottom-style: solid;
+    border-bottom:black ;
+    border-top: solid;
+}
 
+.columns hr{
+    border-bottom-style: solid;
+    border-bottom:black ;
+    border-top: solid;
+    margin-top: 3px;
 }
 .reviewss hr {
     border-style: double;
@@ -428,7 +439,7 @@ label{
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
-    
+    margin-top: -70px;
 
   }
 
@@ -845,6 +856,7 @@ label{
     color: lightskyblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 10px;
+    margin-right: 10%;
 }
 .signupimg{
     background-color: white;
@@ -855,10 +867,22 @@ label{
     margin-top: 10px;
     padding-left: 10px;
     font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: darkgrey;
-    box-shadow: lightgreen;
+    font-family: cursive;
+    color: black;
+    
+    text-align: left;
 
+}
+.bottle{
+    background-color: white;
+    color: lightskyblue;
+    float: left;
+    margin-left: 5%;
+    font-size: 30px;
+}
+.faChat{
+    background-color: lightskyblue;
+    font-size: 20px;
 }
 .signupimg img{
     width:100px;
@@ -933,12 +957,18 @@ form {
  justify-content: center;
  margin-left: 50px;
  margin-top: 15px;
+ border-top: inherit;
  background-color: white;
+ color: black
 }
-.signupinput input{
+.signupinput input[type=file]{
     background-color: white;
+    border-top: inherit;
+    border-left: inherit;
 }
-
+.signupinput input:hover{
+    border-bottom: 2px lightskyblue;
+}
 .signinimage {
  width: 2%;
  margin-left: 10%;
@@ -1198,11 +1228,11 @@ background-color: white;
     text-align: center;
     justify-content: center;
   
-    width: 300px;
-    height: 400px;
-    margin-left: 700px;
+    width: 310px;
+    height: 420px;
+    margin-left: 650px;
     margin-bottom: 10px;
-    border-radius: 30px;
+    border-radius: 25px;
     box-shadow: 0 0 20px 10px rgba(32, 32, 32, 0.7)
 }
  .card:hover{
@@ -1211,11 +1241,78 @@ background-color: white;
 .card p{
     background-color: inherit;
     margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold
+    ;
 }
+/* .card h5{
+    text-align: left;
+    justify-content: center;
+    background-color: inherit;
+    border-radius: 20px;
+    margin-top: 5px;
+} */
 .card img{
-    margin-top: 20px;
+    margin-top: 15px;
     width: 80%;
     height: 50px;
+    border-style: solid;
+}
+.card button {
+    background-color: #4CAF50;
+}
+.cardinfo{
+    background-color: inherit;
+    justify-content: center;
+    color: #888;
+    padding-left: 15px;
+}
+
+
+.cardinfo h5{
+    background-color: inherit;
+    text-align: left;
+    justify-content: center;
+    margin-top: 7px;
+    font-size: 16px;
+    margin-bottom: -5px;
+}
+ .cardinfo h3{
+    background-color: inherit;
+    text-align: right;
+    margin-top: -41px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 15px;
+    border-radius: 20px;
+    
+} 
+.cardinfo h4{
+    background-color: inherit;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    color: lightskyblue;
+     margin-right: 8%; 
+}
+.cardinfo h2{
+    background-color: inherit;
+    font-size: 16px;
+    margin-top: 8px;
+    color: lightskyblue;
+    
+   
+}
+.cardinfo h1{
+    background-color: inherit;
+    font-size: 16px;
+    margin-top: -42px;
+}
+.cardinfo p{
+    text-align: left;
+    color: lightskyblue;
+    margin-left: 5%;
 }
 .cityimage {
     background-color: inherit;
@@ -1319,22 +1416,25 @@ background-color: white;
   .form-container h1{
       background-color: white;
       text-align: left;
-      color: blue;
+      color: lightskyblue;
       margin-bottom: 15px;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-family: Lucida Sans Unicode;
   }
   .form-container {
     max-width: 350px;
     margin-top: 40%;
     padding: 10px;
-    height: 240px;
+    height: 260px;
     float: center;
     padding-right: 20px;
     margin-right: 300px;
-    border-radius: 25px;
+    border-radius: 30px;
     
     margin-bottom: 50px;
     background-color:white;
+  }
+  .form-container p{
+      background-color: lightskyblue;
   }
   /* .form-popup {
     display: none;
@@ -1354,6 +1454,7 @@ background-color: white;
     background: #f1f1f1;
     resize: none;
     min-height: 80px;
+    font-family: Lucida Sans Unicode;
   }
   .form-container textarea:focus {
     background-color: #ddd;
@@ -1364,12 +1465,13 @@ background-color: white;
    
   }
   .form-container .btn {
-    background-color: blue;
+    background-color: lightskyblue;
     color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Lucida Sans Unicode;
     padding: 5px 3px;
     border: solid;
     cursor: pointer;
+    border-radius: 20px;
     width: 55%;
     margin-bottom:10px;
     opacity: 0.8;
@@ -1386,8 +1488,8 @@ background-color: white;
  b {
      background-color: white;
      float: center;
-     color: blue;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     color: lightskyblue;
+     font-family: Lucida Sans Unicode;
  }
 
  .signupwrapper {
@@ -1562,30 +1664,37 @@ ul {
   .topnav-right {
     float: right;
     overflow: hidden;
-    margin-top: -60px;
+    /* margin-top: -60px; */
     padding-right: 10px;
     
   }
   .topnav-right h4{
-      margin-top: 15px;
+      margin-top: 25px;
       color: red;
+      
       
   }
   .topnav-right p{
     margin-right: 10px;
-    margin-top: 10px;
-background-color: #4CAF50;    
+    margin-top: 5px;
+    padding-bottom: 10px;  
 }
- 
+ .topnav-right a{
+     margin-top: 10px;
+ }
 
   .topnav {
    padding-bottom: 10px;
     overflow: hidden;
+    
 }
 .topnav h2{
     float: left;
     font-size: 40px;
-    padding-left: 20px;
+    padding-left: 15px;
+    color: lightskyblue;
+    margin-top: 5px;
+    
 }
 
 /* Style the links inside the navigation bar */
@@ -1596,6 +1705,7 @@ background-color: #4CAF50;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  margin-top: 10px;
 }
 
 /* Change the color of links on hover */
@@ -1607,4 +1717,22 @@ background-color: #4CAF50;
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
+}
+
+.topnav hr{
+    width: 100%;
+}
+
+.reviewerror p{
+    margin-top: 3%;
+    font-family: Lucida Sans Unicode;
+}
+.reviewerror hr{
+border-bottom-style: solid;
+    border-bottom:black ;
+    border-top: solid;
+}
+.profilefrienderror{
+    background-color: inherit;
+    text-align: right;
 }

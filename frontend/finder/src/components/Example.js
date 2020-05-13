@@ -267,7 +267,7 @@ const search = <FaSearch/>
     <h2 class = 'glow'>Uva</h2>
     </div>
   
-    {isError && <Heading fontFamily='cursive' marginBottom={2} textAlign='center'   color='red'>City does not exist!</Heading>}
+    {isError && <Heading fontFamily='cursive' marginBottom={2} textAlign='center'   color='red'>City is not supported!</Heading>}
       <Flex
      >
        <div class = 'homesearch'>
@@ -289,6 +289,7 @@ const search = <FaSearch/>
        <Flex mx={2}
        textAlign='center'
        justifyContent='center'
+       
       
       >
       {results.length > 0 &&  <button type ='button' onClick ={e=> getPrice()}> Price Range</button>}

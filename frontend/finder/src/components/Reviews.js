@@ -10,6 +10,7 @@ const Review = (props) => {
     const [token, setToken] = useState(sessionStorage.getItem('token') || '')
     const [chartData,setChartData] = useState({})
     const [error,setError] = useState(false)
+    const [reviewError,setReviewError] = useState(false)
 
     const seeReviews = async () => {
       const rest =[]
@@ -19,8 +20,9 @@ const Review = (props) => {
         try{
         const response = await fetch(`http://127.0.0.1:5000/api/onereview/${token}`);
         const res = await response.json();
-        setData(res.reviews);
+         if(res.reviews.length>0) {
         
+          setData(res.reviews)
         for(const output of res.reviews) {
           rest.push(output[1])
           rate.push(output[2])
@@ -50,12 +52,15 @@ const Review = (props) => {
           ]
 
         
-       })
+       })}
       
+      else{
+        setReviewError(true)
+      }
         
       } catch(error) {
         console.log(error)
-        setError(true)
+        setReviewError(true)
       
       }
       };
@@ -101,9 +106,10 @@ return (
   >
 <Card marginTop={4} p={2} backgroundColor="#f5f5f5">
     <Button  onClick={e => seeReviews()} backgroundColor='#f5f5f5'  color="black" marginTop={3}  width = {1/2}> Reviews</Button>
-    <hr color ='black'></hr>
+    
     <div class = 'reviewerror'>
-    {error && <p> You currently have no reviews, go check out some restaraunts!</p>}
+    <hr ></hr>
+    {reviewError &&<p> You currently have no reviews, go check out some restaraunts!</p>}
     </div>
     {result.length >0 &&<p fontWeight='bold'> # of Reviews : {result.length}</p>}
     {/* {result.length >0 &&<p backgroundColor="#f5f5f5" marginLeft={1} marginTop={1}>{result}</p>} */}
